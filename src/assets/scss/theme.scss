@@ -1,0 +1,38 @@
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Bootstrap Functions.
+- Bootstrap Mixins.
+- Framework SASS Variables - override Bootstrap's SASS Vars in this file.
+- Bootstrap Variables
+- Framework Map Amends
+- Framework Utilities
+- Bootstrap Core
+- Framework CSS Custom Properties (CSS Variables)
+- Framework Base
+- Framework Components
+- Framework Vendors
+*/
+
+@import "~bootstrap/scss/functions";
+
+@import "~bootstrap/scss/mixins";
+
+@import "abstracts/sass-variables";
+
+@import "~bootstrap/scss/variables";
+
+@import "abstracts/map-amends";
+
+@import "~bootstrap/scss/maps";
+
+@import "utilities/utilities";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "abstracts/css-vars";
+
+@import "base/base";
+
+@import "components/components";
+
+@import "vendors/vendors";
