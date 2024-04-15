@@ -52,6 +52,7 @@ const wPackConfig = {
       },
     output: {
         filename: paths.dist.js + '/[name].bundle.js',
+        publicPath: '/',
     },
     devtool: 'source-map',
     mode: 'development',
@@ -146,6 +147,12 @@ const wPackConfig = {
         }),
         new HandlebarsPlugin({
             entry: path.join(process.cwd(), 'src', 'html', '**', '*.html'),
+            output: function (filepath, sourcePath) {
+              const outputPath = path.join(process.cwd(), 'dist');
+              const relativePath = path.relative(sourcePath, outputPath);
+              const fileName = filepath.replace(/\.html$/, '.html');
+              return path.join(outputPath, relativePath, fileName);
+            },
             output: path.join(process.cwd(), 'dist', '[path]', '[name].html'),
             partials: [path.join(process.cwd(), 'src', 'partials', '**', '*.{html,svg}')],
             data: projectData,

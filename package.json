@@ -1,8 +1,9 @@
-{   "homepage": "https://kennchann.github.io/odoo-exercise",
-    "name": "Odoo Design Exercise",
+{   "name": "Odoo Design Exercise",
     "version": "1.0.0",
     "description": "Bootstrap, Webpack & Handlebars HTML",
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "start": "webpack-dev-server --open",
         "build": "del-cli dist && webpack -p"
     },
